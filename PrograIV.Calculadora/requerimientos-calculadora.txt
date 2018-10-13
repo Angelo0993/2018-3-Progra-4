@@ -1,0 +1,9 @@
+Haga una forma que capture dos operandos y un operador.
+Aunque el usuario puede digitar letras en los operandos, en este caso el formulario NO hará el cálculo, sino que mostrará un error.
+Los posibles operadores son:
+- Suma
+- Resta
+- Multiplicación
+- División
+Proveerá de un botón para realizar la operación
+Los operadores se seleccionarán por medio de una lista desplegable (combo box).
