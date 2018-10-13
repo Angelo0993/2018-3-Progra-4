@@ -1,6 +1,6 @@
 ﻿namespace PrograIV.Calculadora
 {
-    partial class Form1
+    partial class frmCalculadora
     {
         /// <summary>
         /// Required designer variable.
@@ -31,15 +31,19 @@
             this.lblTitulo = new System.Windows.Forms.Label();
             this.tbOperandoUno = new System.Windows.Forms.TextBox();
             this.lblOperandoUno = new System.Windows.Forms.Label();
-            this.chkSuma = new System.Windows.Forms.CheckBox();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.lblOperandoDos = new System.Windows.Forms.Label();
+            this.tbOperandoDos = new System.Windows.Forms.TextBox();
+            this.cbOperadores = new System.Windows.Forms.ComboBox();
+            this.lblOperador = new System.Windows.Forms.Label();
+            this.btnCalcular = new System.Windows.Forms.Button();
+            this.lblResultado = new System.Windows.Forms.Label();
+            this.tbResultado = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblTitulo
             // 
             this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Location = new System.Drawing.Point(26, 43);
+            this.lblTitulo.Location = new System.Drawing.Point(33, 43);
             this.lblTitulo.Name = "lblTitulo";
             this.lblTitulo.Size = new System.Drawing.Size(97, 13);
             this.lblTitulo.TabIndex = 0;
@@ -47,7 +51,7 @@
             // 
             // tbOperandoUno
             // 
-            this.tbOperandoUno.Location = new System.Drawing.Point(159, 71);
+            this.tbOperandoUno.Location = new System.Drawing.Point(185, 74);
             this.tbOperandoUno.Name = "tbOperandoUno";
             this.tbOperandoUno.Size = new System.Drawing.Size(100, 20);
             this.tbOperandoUno.TabIndex = 1;
@@ -56,55 +60,96 @@
             // lblOperandoUno
             // 
             this.lblOperandoUno.AutoSize = true;
-            this.lblOperandoUno.Location = new System.Drawing.Point(26, 71);
+            this.lblOperandoUno.Location = new System.Drawing.Point(33, 77);
             this.lblOperandoUno.Name = "lblOperandoUno";
             this.lblOperandoUno.Size = new System.Drawing.Size(124, 13);
             this.lblOperandoUno.TabIndex = 2;
             this.lblOperandoUno.Text = "Digite el primer operando";
             // 
-            // chkSuma
+            // lblOperandoDos
             // 
-            this.chkSuma.AutoSize = true;
-            this.chkSuma.Checked = true;
-            this.chkSuma.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.chkSuma.Location = new System.Drawing.Point(29, 106);
-            this.chkSuma.Name = "chkSuma";
-            this.chkSuma.Size = new System.Drawing.Size(87, 17);
-            this.chkSuma.TabIndex = 3;
-            this.chkSuma.Text = "Es una suma";
-            this.chkSuma.UseVisualStyleBackColor = true;
+            this.lblOperandoDos.AutoSize = true;
+            this.lblOperandoDos.Location = new System.Drawing.Point(33, 111);
+            this.lblOperandoDos.Name = "lblOperandoDos";
+            this.lblOperandoDos.Size = new System.Drawing.Size(137, 13);
+            this.lblOperandoDos.TabIndex = 5;
+            this.lblOperandoDos.Text = "Digite el segundo operando";
             // 
-            // dateTimePicker1
+            // tbOperandoDos
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(29, 154);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 4;
+            this.tbOperandoDos.Location = new System.Drawing.Point(185, 109);
+            this.tbOperandoDos.Name = "tbOperandoDos";
+            this.tbOperandoDos.Size = new System.Drawing.Size(100, 20);
+            this.tbOperandoDos.TabIndex = 4;
+            this.tbOperandoDos.Text = "0";
             // 
-            // radioButton1
+            // cbOperadores
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Location = new System.Drawing.Point(29, 193);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(85, 17);
-            this.radioButton1.TabIndex = 5;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "radioButton1";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.cbOperadores.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbOperadores.FormattingEnabled = true;
+            this.cbOperadores.Items.AddRange(new object[] {
+            "Suma",
+            "Resta",
+            "Multiplicación",
+            "División"});
+            this.cbOperadores.Location = new System.Drawing.Point(185, 144);
+            this.cbOperadores.Name = "cbOperadores";
+            this.cbOperadores.Size = new System.Drawing.Size(100, 21);
+            this.cbOperadores.TabIndex = 6;
             // 
-            // Form1
+            // lblOperador
+            // 
+            this.lblOperador.AutoSize = true;
+            this.lblOperador.Location = new System.Drawing.Point(33, 147);
+            this.lblOperador.Name = "lblOperador";
+            this.lblOperador.Size = new System.Drawing.Size(82, 13);
+            this.lblOperador.TabIndex = 7;
+            this.lblOperador.Text = "Elija el operador";
+            // 
+            // btnCalcular
+            // 
+            this.btnCalcular.Location = new System.Drawing.Point(148, 216);
+            this.btnCalcular.Name = "btnCalcular";
+            this.btnCalcular.Size = new System.Drawing.Size(75, 23);
+            this.btnCalcular.TabIndex = 8;
+            this.btnCalcular.Text = "Calcular";
+            this.btnCalcular.UseVisualStyleBackColor = true;
+            this.btnCalcular.Click += new System.EventHandler(this.btnCalcular_Click);
+            // 
+            // lblResultado
+            // 
+            this.lblResultado.AutoSize = true;
+            this.lblResultado.Location = new System.Drawing.Point(33, 182);
+            this.lblResultado.Name = "lblResultado";
+            this.lblResultado.Size = new System.Drawing.Size(58, 13);
+            this.lblResultado.TabIndex = 9;
+            this.lblResultado.Text = "Resultado:";
+            // 
+            // tbResultado
+            // 
+            this.tbResultado.Location = new System.Drawing.Point(185, 179);
+            this.tbResultado.Name = "tbResultado";
+            this.tbResultado.ReadOnly = true;
+            this.tbResultado.Size = new System.Drawing.Size(100, 20);
+            this.tbResultado.TabIndex = 10;
+            // 
+            // frmCalculadora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.radioButton1);
-            this.Controls.Add(this.dateTimePicker1);
-            this.Controls.Add(this.chkSuma);
+            this.ClientSize = new System.Drawing.Size(377, 274);
+            this.Controls.Add(this.tbResultado);
+            this.Controls.Add(this.lblResultado);
+            this.Controls.Add(this.btnCalcular);
+            this.Controls.Add(this.lblOperador);
+            this.Controls.Add(this.cbOperadores);
+            this.Controls.Add(this.lblOperandoDos);
+            this.Controls.Add(this.tbOperandoDos);
             this.Controls.Add(this.lblOperandoUno);
             this.Controls.Add(this.tbOperandoUno);
             this.Controls.Add(this.lblTitulo);
-            this.Name = "Form1";
-            this.Text = "Form1";
+            this.Name = "frmCalculadora";
+            this.Text = "Calculadora";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -115,9 +160,13 @@
         private System.Windows.Forms.Label lblTitulo;
         private System.Windows.Forms.TextBox tbOperandoUno;
         private System.Windows.Forms.Label lblOperandoUno;
-        private System.Windows.Forms.CheckBox chkSuma;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton1;
+        private System.Windows.Forms.Label lblOperandoDos;
+        private System.Windows.Forms.TextBox tbOperandoDos;
+        private System.Windows.Forms.ComboBox cbOperadores;
+        private System.Windows.Forms.Label lblOperador;
+        private System.Windows.Forms.Button btnCalcular;
+        private System.Windows.Forms.Label lblResultado;
+        private System.Windows.Forms.TextBox tbResultado;
     }
 }
 
