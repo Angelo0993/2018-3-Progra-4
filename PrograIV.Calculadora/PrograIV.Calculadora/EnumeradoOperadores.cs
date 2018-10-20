@@ -11,6 +11,7 @@ namespace PrograIV.Calculadora
         Suma = 4,
         Resta = 17,
         Multiplicacion = -3,
-        Division = 20
+        Division = 20,
+        Desconocido = 666
     }
 }

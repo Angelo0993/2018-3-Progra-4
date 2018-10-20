@@ -19,14 +19,54 @@ namespace PrograIV.Calculadora
         {
             double miPrimerOperando = Convert.ToDouble(elPrimerOperando);
             double miSegundoOperando = Convert.ToDouble(elSegundoOperando);
-            double elResultado = RealizarOperacion(miPrimerOperando, miSegundoOperando, elOperador);
-            string elResultadoConvertido = elResultado.ToString();
+            EnumeradoOperadores elOperadorEnumerado = ConvertirStringEnEnumeradoOperadores(elOperador);
+            double? elResultado = RealizarOperacion(miPrimerOperando, miSegundoOperando, elOperadorEnumerado);
+            string elResultadoConvertido;
+            if (elResultado != null)
+            {
+                elResultadoConvertido = elResultado.ToString();
+            }
+            else
+                elResultadoConvertido = "Error en el cálculo";
             return elResultadoConvertido;
         }
 
-        private double RealizarOperacion (double elPrimerOperando, double elSegundoOperando, EnumeradoOperadores elOperador)
+        private EnumeradoOperadores ConvertirStringEnEnumeradoOperadores (string elOperador)
         {
-            double elResultado = 0.0;
+            EnumeradoOperadores elResultado;
+            switch (elOperador)
+            {
+                case "Suma":
+                case "Add":
+                case "Abarajamelabañera":
+                case "subanstrugenbajen":
+                case "yanomiromisuzuki":
+                case "linchao":
+                    elResultado = EnumeradoOperadores.Suma;
+                    break;
+                case "Resta":
+                case "Minus":
+                    elResultado = EnumeradoOperadores.Resta;
+                    break;
+                case "Multiplicación":
+                case "Times":
+                case "Multiply":
+                    elResultado = EnumeradoOperadores.Multiplicacion;
+                    break;
+                case "División":
+                case "Divide":
+                    elResultado = EnumeradoOperadores.Division;
+                    break;
+                default:
+                    elResultado = EnumeradoOperadores.Desconocido;
+                    break;
+            }
+            return elResultado;
+        }
+
+        private double? RealizarOperacion (double elPrimerOperando, double elSegundoOperando, EnumeradoOperadores elOperador)
+        {
+            double? elResultado = 0.0;
             switch (elOperador)
             {
                 case EnumeradoOperadores.Suma:
@@ -46,7 +86,17 @@ namespace PrograIV.Calculadora
                     }
                 case EnumeradoOperadores.Division:
                     {
-                        elResultado = (elPrimerOperando / elSegundoOperando);
+                        if (elSegundoOperando != 0)
+                        {
+                            elResultado = (elPrimerOperando / elSegundoOperando);
+                        }
+                        else
+                            elResultado = null;
+                        break;
+                    }
+                case EnumeradoOperadores.Desconocido:
+                    {
+                        elResultado = null;
                         break;
                     }
 
