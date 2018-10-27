@@ -12,14 +12,25 @@ namespace PrograIV.Interfaces.LogicaNegocio
     // NOTE: In order to launch WCF Test Client for testing this service, please select Service1.svc or Service1.svc.cs at the Solution Explorer and start debugging.
     public class EjemploCalculos : IEjemploCalculos, IEjemploCalculosDos
     {
+        string IEjemploCalculos.Show(string elMensaje)
+        {
+            var elResultado = "Implementando IEjemploCalculos " + elMensaje ;
+            return elResultado;
+        }
+
         string IEjemploCalculos.Show()
         {
-            var elResultado = "Implementando IEmploCalculos";
+            var elResultado = "Implementando IEjemploCalculos";
+            return elResultado;
+        }
+        string IEjemploCalculosDos.Show(string elMensaje)
+        {
+            var elResultado = "Implementando IEjemploCalculosDos " + elMensaje;
             return elResultado;
         }
         string IEjemploCalculosDos.Show()
         {
-            var elResultado = "Implementando IEmploCalculosDos";
+            var elResultado = "Implementando IEjemploCalculosDos";
             return elResultado;
         }
 

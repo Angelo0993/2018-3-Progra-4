@@ -41,12 +41,13 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(71, 188);
+            this.btnOK.Location = new System.Drawing.Point(112, 188);
             this.btnOK.Name = "btnOK";
             this.btnOK.Size = new System.Drawing.Size(75, 23);
             this.btnOK.TabIndex = 0;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // lblMensaje1
             // 
@@ -61,14 +62,14 @@
             // 
             this.tbMensaje1.Location = new System.Drawing.Point(77, 13);
             this.tbMensaje1.Name = "tbMensaje1";
-            this.tbMensaje1.Size = new System.Drawing.Size(100, 20);
+            this.tbMensaje1.Size = new System.Drawing.Size(192, 20);
             this.tbMensaje1.TabIndex = 2;
             // 
             // tbMensaje2
             // 
             this.tbMensaje2.Location = new System.Drawing.Point(77, 40);
             this.tbMensaje2.Name = "tbMensaje2";
-            this.tbMensaje2.Size = new System.Drawing.Size(100, 20);
+            this.tbMensaje2.Size = new System.Drawing.Size(192, 20);
             this.tbMensaje2.TabIndex = 3;
             // 
             // lblMensaje2
@@ -102,21 +103,21 @@
             // 
             this.tbSalida1.Location = new System.Drawing.Point(77, 100);
             this.tbSalida1.Name = "tbSalida1";
-            this.tbSalida1.Size = new System.Drawing.Size(100, 20);
+            this.tbSalida1.Size = new System.Drawing.Size(192, 20);
             this.tbSalida1.TabIndex = 7;
             // 
             // tbSalida2
             // 
             this.tbSalida2.Location = new System.Drawing.Point(77, 124);
             this.tbSalida2.Name = "tbSalida2";
-            this.tbSalida2.Size = new System.Drawing.Size(100, 20);
+            this.tbSalida2.Size = new System.Drawing.Size(192, 20);
             this.tbSalida2.TabIndex = 8;
             // 
             // frmInvocarWcf
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(233, 252);
+            this.ClientSize = new System.Drawing.Size(292, 252);
             this.Controls.Add(this.tbSalida2);
             this.Controls.Add(this.tbSalida1);
             this.Controls.Add(this.lblSalida2);

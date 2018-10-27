@@ -16,5 +16,14 @@ namespace PrograIV.Interfaces
         {
             InitializeComponent();
         }
+
+        private void btnOK_Click(object sender, EventArgs e)
+        {
+            var elCalculo = new PrograIV.Interfaces.LogicaNegocio.EjemploCalculos();
+            var elPrimerCalculo = (PrograIV.Interfaces.LogicaNegocio.IEjemploCalculos)elCalculo;
+            tbSalida1.Text = elPrimerCalculo.Show(tbMensaje1.Text);
+            var elSegundoCalculo = (PrograIV.Interfaces.LogicaNegocio.IEjemploCalculosDos)elCalculo;
+            tbSalida2.Text = elSegundoCalculo.Show(tbMensaje2.Text);
+        }
     }
 }
