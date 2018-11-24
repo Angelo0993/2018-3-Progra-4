@@ -10,7 +10,7 @@ namespace PrograIV.AW.Products.BL
 {
     // NOTE: You can use the "Rename" command on the "Refactor" menu to change the interface name "IService1" in both code and config file together.
     [ServiceContract]
-    public interface IService1
+    public interface IAWProductos
     {
 
         [OperationContract]
@@ -20,6 +20,15 @@ namespace PrograIV.AW.Products.BL
         CompositeType GetDataUsingDataContract(CompositeType composite);
 
         // TODO: Add your service operations here
+        [OperationContract]
+        IList<Model.Product> ListarProductosPorRangoDePrecio(decimal precioInferior, decimal precioSuperior);
+
+        [OperationContract]
+        IList<Model.Product> ListarProductosPorColor(string elColor);
+
+        [OperationContract]
+        IList<Model.Product> ListarProductosPorNombreDeCategoria(string laCategoria);
+
     }
 
 
