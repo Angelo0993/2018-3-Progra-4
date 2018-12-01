@@ -78,6 +78,12 @@ namespace PrograIV.AW.Products.SI.WcfProductos {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="SI.WcfProductos.IAWProductos")]
     public interface IAWProductos {
         
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAWProductos/ListarIdYNombreDeProductosPorColor", ReplyAction="http://tempuri.org/IAWProductos/ListarIdYNombreDeProductosPorColorResponse")]
+        PrograIV.AW.Products.Model.ComboDeProductos[] ListarIdYNombreDeProductosPorColor(string elColor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAWProductos/ListarIdYNombreDeProductosPorColor", ReplyAction="http://tempuri.org/IAWProductos/ListarIdYNombreDeProductosPorColorResponse")]
+        System.Threading.Tasks.Task<PrograIV.AW.Products.Model.ComboDeProductos[]> ListarIdYNombreDeProductosPorColorAsync(string elColor);
+        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAWProductos/GetData", ReplyAction="http://tempuri.org/IAWProductos/GetDataResponse")]
         string GetData(int value);
         
@@ -134,6 +140,14 @@ namespace PrograIV.AW.Products.SI.WcfProductos {
         
         public AWProductosClient(System.ServiceModel.Channels.Binding binding, System.ServiceModel.EndpointAddress remoteAddress) : 
                 base(binding, remoteAddress) {
+        }
+        
+        public PrograIV.AW.Products.Model.ComboDeProductos[] ListarIdYNombreDeProductosPorColor(string elColor) {
+            return base.Channel.ListarIdYNombreDeProductosPorColor(elColor);
+        }
+        
+        public System.Threading.Tasks.Task<PrograIV.AW.Products.Model.ComboDeProductos[]> ListarIdYNombreDeProductosPorColorAsync(string elColor) {
+            return base.Channel.ListarIdYNombreDeProductosPorColorAsync(elColor);
         }
         
         public string GetData(int value) {

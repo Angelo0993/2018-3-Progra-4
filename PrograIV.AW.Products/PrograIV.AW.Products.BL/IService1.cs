@@ -12,6 +12,9 @@ namespace PrograIV.AW.Products.BL
     [ServiceContract]
     public interface IAWProductos
     {
+        [OperationContract]
+        IList<Model.ComboDeProductos> ListarIdYNombreDeProductosPorColor(string elColor);
+
 
         [OperationContract]
         string GetData(int value);

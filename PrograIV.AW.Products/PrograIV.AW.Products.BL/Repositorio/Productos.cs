@@ -17,8 +17,19 @@ namespace PrograIV.AW.Products.BL.Repositorio
 
         public IList<Model.ComboDeProductos> ListarIdYNombreDeProductosPorColor(string elColor)
         {
-            var elResultado = _contexto.Product.Where(p => p.Color.Contains(elColor)).ToList();
-            return elResultado;
+            /*
+            var laListaDeProductos = _contexto.Product.Where(p => p.Color.Contains(elColor));
+
+            IList<Model.ComboDeProductos> elResultado = laListaDeProductos.Select(p=> new Model.ComboDeProductos {idProducto = p.ProductID,
+                                      NombreProducto = p.Name}).ToList();
+                                      */
+            var laListaDeProductos = _contexto.Product.Where(p => p.Color.Contains(elColor)).Select(p => new Model.ComboDeProductos
+            {
+                idProducto = p.ProductID,
+                NombreProducto = p.Name
+            }).ToList();
+
+            return laListaDeProductos;
         }
 
 

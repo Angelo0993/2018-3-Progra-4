@@ -21,6 +21,17 @@ namespace PrograIV.AW.Products
         {
             var elAccesoAlBussinessLogic = new AccesoBL.Productos();
             var listaDeProductos = elAccesoAlBussinessLogic.ListarProductosPorColor(cbColores.Text);
+            CargarComboBoxConListaDeProductos(listaDeProductos);
         }
+
+        private void CargarComboBoxConListaDeProductos(IList<Model.ComboDeProductos> laLista)
+        {
+            cbColores.Items.Clear();
+            foreach (var item in laLista)
+            {
+                cbColores.Items.Add(item.NombreProducto);
+            }
+        }
+
     }
 }

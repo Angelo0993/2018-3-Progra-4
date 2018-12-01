@@ -8,11 +8,11 @@ namespace PrograIV.AW.Products.AccesoBL
 {
     public class Productos
     {
-        public IList<Model.Product> ListarProductosPorColor(string elColor)
+        public IList<Model.ComboDeProductos> ListarProductosPorColor(string elColor)
         {
             var elClienteWcf = new SI.WcfProductos.AWProductosClient();
 
-            var elResultado = elClienteWcf.ListarProductosPorColor(elColor);
+            var elResultado = elClienteWcf.ListarIdYNombreDeProductosPorColor(elColor);
             elClienteWcf.Close();
             return elResultado;
         }

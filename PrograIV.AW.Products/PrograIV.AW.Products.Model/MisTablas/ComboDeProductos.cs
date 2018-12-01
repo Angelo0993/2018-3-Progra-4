@@ -8,7 +8,7 @@ namespace PrograIV.AW.Products.Model
 {
     public class ComboDeProductos
     {
-        int idProducto;
-        string NombreProducto;
+        public int idProducto;
+        public string NombreProducto;
     }
 }

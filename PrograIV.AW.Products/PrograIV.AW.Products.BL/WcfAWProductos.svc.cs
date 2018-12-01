@@ -31,6 +31,13 @@ namespace PrograIV.AW.Products.BL
             return composite;
         }
 
+        public IList<ComboDeProductos> ListarIdYNombreDeProductosPorColor(string elColor)
+        {
+            var elRepositorio = new Repositorio.Productos();
+            var elResultado = elRepositorio.ListarIdYNombreDeProductosPorColor(elColor);
+            return (elResultado);
+        }
+
         public IList<Product> ListarProductosPorColor(string elColor)
         {
             var elRepositorio = new Repositorio.Productos();
