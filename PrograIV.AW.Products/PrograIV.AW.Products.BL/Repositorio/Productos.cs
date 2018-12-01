@@ -15,5 +15,12 @@ namespace PrograIV.AW.Products.BL.Repositorio
             return elResultado;
         }
 
+        public IList<Model.ComboDeProductos> ListarIdYNombreDeProductosPorColor(string elColor)
+        {
+            var elResultado = _contexto.Product.Where(p => p.Color.Contains(elColor)).ToList();
+            return elResultado;
+        }
+
+
     }
 }

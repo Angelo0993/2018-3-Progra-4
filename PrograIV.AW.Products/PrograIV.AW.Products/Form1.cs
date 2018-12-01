@@ -16,5 +16,11 @@ namespace PrograIV.AW.Products
         {
             InitializeComponent();
         }
+
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            var elAccesoAlBussinessLogic = new AccesoBL.Productos();
+            var listaDeProductos = elAccesoAlBussinessLogic.ListarProductosPorColor(cbColores.Text);
+        }
     }
 }
