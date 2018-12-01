@@ -26,11 +26,14 @@ namespace PrograIV.AW.Products
 
         private void CargarComboBoxConListaDeProductos(IList<Model.ComboDeProductos> laLista)
         {
-            cbColores.Items.Clear();
+            cbProductos.Items.Clear();
+            cbProductos.ValueMember = "idProducto";
+            cbProductos.DisplayMember = "NombreProducto";
             foreach (var item in laLista)
             {
-                cbColores.Items.Add(item.NombreProducto);
+                cbProductos.Items.Add(item.NombreProducto);
             }
+            //           cbProductos.DataSource = laLista;
         }
 
     }
